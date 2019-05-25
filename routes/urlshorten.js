@@ -11,11 +11,11 @@ router.use(logger('dev'));
 router.use(express.json());
 
 /* GET code */
-router.get('/', async (req, res) => {
-  const { hash } = req.query;
+router.get('/:hash', async (req, res) => {
+  const { hash } = req.params;
   if (hash) {
     const item = await urlshortenService.read({ hash });
-    return res.json(item.url).send();
+    return res.redirect(item.url);
   }
   return res.status(404).send();
 });
