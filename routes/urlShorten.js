@@ -2,7 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const log = require('log4js').getLogger();
 const createError = require('http-errors');
-const urlshortenService = require('./services/urlshortenService');
+const urlshortenService = require('./services/urlShortenService');
 
 log.level = 'debug';
 

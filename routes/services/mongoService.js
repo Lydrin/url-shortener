@@ -20,9 +20,9 @@ function read({ hash }) {
   return new Promise((resolve, reject) => {
     collection.findOne({ hash }, (err, doc) => {
       if (err) {
-        return reject(new Error("Une erreur s'est produite lors de l'accès en base"));
+        reject(new Error('Une erreur s\'est produite lors de l\'accès en base'));
       }
-      return resolve(doc);
+      resolve(doc);
     });
   });
 }
@@ -31,9 +31,9 @@ async function write({ hash, url }) {
   return new Promise((resolve, reject) => {
     collection.insert({ url, hash }, (err, doc) => {
       if (err) {
-        return reject(new Error("Une erreur s'est produite lors de l'accès en base"));
+        reject(new Error("Une erreur s'est produite lors de l'accès en base"));
       }
-      return resolve(doc);
+      resolve(doc);
     });
   });
 }

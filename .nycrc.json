@@ -1,0 +1,5 @@
+{
+  "all": true,
+  "include": ["*"],
+  "exclude": [".eslintrc.js", "config.js", "test/"]
+}
